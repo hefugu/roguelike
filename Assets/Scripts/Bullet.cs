@@ -15,11 +15,9 @@ public class Bullet : MonoBehaviour
     {
         if(other.CompareTag("Enemy"))
         {
-            Instantiate(xpPrefab, other.transform.position, Quaternion.identity);
-
-            Destroy(other.gameObject);
+            other.GetComponent<EnemyHealth>().TakeDamage(1);
             Destroy(gameObject);
-        }
+    }
     }
 
 }

@@ -25,6 +25,8 @@ public class XPOrb : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.GetComponent<PlayerXP>().AddXP(1);
+            
             Destroy(gameObject);
         }
     }

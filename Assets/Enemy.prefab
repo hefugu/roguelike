@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2978281281117942039}
   - component: {fileID: 3651073852887444795}
   - component: {fileID: 6348031543469470926}
+  - component: {fileID: 2013879898292909275}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -170,4 +171,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   speed: 2
+--- !u!114 &2013879898292909275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084484224560294523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7bf970731639604bb4c762b2b8a9e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHP: 3
   xpPrefab: {fileID: 4575568521068650156, guid: 173b006f488cb0641bedf45a011bd9de, type: 3}

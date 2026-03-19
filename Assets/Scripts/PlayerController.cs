@@ -4,6 +4,8 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 6f;
 
+    public float attackRange = 6f;
+
     Rigidbody2D rb;
     Vector2 move;
 
@@ -52,23 +54,23 @@ public class PlayerController : MonoBehaviour
     }
 
     GameObject FindNearestEnemy()
+{
+    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+    float minDist = Mathf.Infinity;
+    GameObject nearest = null;
+
+    foreach (GameObject enemy in enemies)
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        float dist = Vector2.Distance(transform.position, enemy.transform.position);
 
-        float minDist = Mathf.Infinity;
-        GameObject nearest = null;
-
-        foreach (GameObject enemy in enemies)
+        if (dist < attackRange && dist < minDist)
         {
-            float dist = Vector2.Distance(transform.position, enemy.transform.position);
-
-            if (dist < minDist)
-            {
-                minDist = dist;
-                nearest = enemy;
-            }
+            minDist = dist;
+            nearest = enemy;
         }
-
-        return nearest;
     }
+
+    return nearest;
+}
 }
