@@ -53,6 +53,16 @@ public class PlayerController : MonoBehaviour
         bullet.GetComponent<Bullet>().direction = dir;
     }
 
+    public void UpgradeFireRate()
+    {
+        shootInterval = Mathf.Max(0.1f, shootInterval - 0.1f);
+    }
+
+    public void UpgradeRange()
+    {
+        attackRange += 1.0f;
+    }
+
     GameObject FindNearestEnemy()
 {
     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");

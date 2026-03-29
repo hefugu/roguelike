@@ -39,4 +39,9 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Game Over");
         Time.timeScale = 0f;
     }
+
+    public void UpgradeMaxHP()
+    {
+        maxHP += 2;
+    }
 }
